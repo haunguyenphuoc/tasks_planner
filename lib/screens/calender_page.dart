@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_planner/date_list.dart';
+import 'package:task_planner/screens/create_task_page.dart';
 import 'package:task_planner/theme/color/color.dart';
 import 'package:task_planner/wigets/back_button.dart';
 import 'package:task_planner/wigets/calender_date.dart';
@@ -49,7 +50,10 @@ class CalenderPage extends StatelessWidget {
                           BorderRadiusDirectional.all(Radius.circular(30)),
                     ),
                     child: FlatButton(
-                      onPressed: () => debugPrint('On press add task'),
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateTaskPage())),
                       child: Center(
                         child: Text(
                           'Add task',
@@ -164,7 +168,7 @@ class CalenderPage extends StatelessWidget {
                                 ),
                                 TaskContainer(
                                   title: 'Call',
-                                  subTitle: 'Call to mon',
+                                  subTitle: 'Call to mom',
                                   boxColor: LightColors.kLavender,
                                 ),
                               ],
